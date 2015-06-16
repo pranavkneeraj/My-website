@@ -5,9 +5,15 @@
 </div>
 
 {% for post in posts %}
-    {{ post }}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
 {% endfor %}
+
 <h1>Error</h1>
 </body>
+
 </html>
 
