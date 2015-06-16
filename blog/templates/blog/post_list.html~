@@ -9,3 +9,5 @@
         <p>{{ post.text|linebreaks }}</p>
     </div>
 {% endfor %}
+
+<h1>Error</h1>
