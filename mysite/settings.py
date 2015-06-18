@@ -1,3 +1,4 @@
+
 """
 Django settings for mysite project.
 
@@ -57,7 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-             os.path.abspath('mysite/templates'),
+            os.path.abspath('mysite/templates'),
             
         ],
         'APP_DIRS': True,
