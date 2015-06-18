@@ -26,7 +26,6 @@ h1, h2, h3, h4 {
 .save {
     float: right;
 }
-
 .post-form textarea, .post-form input {
     width: 100%;
 }
@@ -44,4 +43,15 @@ h1, h2, h3, h4 {
 
 .post h1 a, .post h1 a:visited {
     color: #000000;
+}
+.login
+{
+	margin-left:1500px;
+}
+
+.login_form
+{
+	font-weight:bold;
+	margin-left:300px;
+	
 }

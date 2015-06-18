@@ -1,3 +1,4 @@
+
 {% load staticfiles %}
 <html>
 <head>
@@ -11,7 +12,14 @@
 <body>
 <div class="page-header">
 <a href="{% url "blog.views.post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>	
-    <h1><a href="/">Django Girls Default Blog</a></h1>  <a href="{% url 'blog.views.login' %}"><h3 class="login">log in</h3></a>
+<h1><a href="/">Pranav's Default Blog</a></h1>  <div>
+  {{ user }}
+  {% if user.is_anonymous %}
+  <a href="{% url 'django.contrib.auth.views.login' %}">login</a>
+  {% else %}
+  <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>
+  {% endif %}
+      </div>
 </div>
 
 <div class="content container">
