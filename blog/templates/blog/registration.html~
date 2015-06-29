@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <a href="http://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page">
+  </head>
+  <body>
+    <div class="page-header">
+      <a href="{% url "blog.views.post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+      <h1><a href="/">Pranav's Default Blog</a></h1>
+    </div>
+
+    {% if form.errors %}
+    <p></p>
+    {% endif %}
+    <form method="post" class="post-form" action="{% url 'blog.views.register' %}">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Registration" class="btn btn-default"/>
+      <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+
+{{variables}}
+  </body>
+
+  </html>

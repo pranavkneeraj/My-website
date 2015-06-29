@@ -27,7 +27,7 @@ h1, h2, h3, h4 {
     float: right;
 }
 .post-form textarea, .post-form input {
-    width: 100%;
+ 
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
@@ -54,4 +54,11 @@ h1, h2, h3, h4 {
 	font-weight:bold;
 	margin-left:300px;
 	
+}
+body { 
+  background: url("blog_cliparts_powerpoint_backgrounds.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

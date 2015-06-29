@@ -1,0 +1,28 @@
+
+from django import forms
+
+import re
+from custom_user.models import AuthUser
+from django.utils.translation import ugettext_lazy as _
+
+
+
+
+class RegistrationForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())	
+    confirm_password = forms.CharField(widget=forms.PasswordInput())
+	
+    class Meta:
+        model = AuthUser
+        fields = ('first_name','username','email','password')
+    def is_valid(self):
+        valid=super(RegistrationForm,self).is_valid()
+        password1 = self.cleaned_data.get('password')
+        password2 = self.cleaned_data.get('confirm_password')
+        if valid and password1==password2:
+            True
+        else:
+            self.add_error('password',"Two passwords are not same")
+
+        
+        

@@ -1,8 +1,10 @@
 from django.db import models
 from django.utils import timezone
-
+from django.contrib.auth.models import User
+from django.contrib.auth.models import BaseUserManager
+    
 class Post(models.Model):
-    author = models.ForeignKey('auth.User')
+    author = models.ForeignKey('custom_user.AuthUser')
     title = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(
@@ -23,3 +25,6 @@ class Login(models.Model):
 	
 	def __str__(self):
 		return self.username
+
+
+

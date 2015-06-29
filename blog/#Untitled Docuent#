@@ -7,6 +7,12 @@
  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <a href="http://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page">
+<style>
+  table
+  {
+  cellspacing:100px;
+  }
+ </style>
 </head>
 <body>
 <div class="page-header">
@@ -14,13 +20,11 @@
     <h1><a href="/">Pranav's Default Blog</a></h1>
 </div>
 
- <h1>New post</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+    <form method="POST" class="post-form" action="{% url 'blog.views.register' %}">{% csrf_token %}
+     {{form.as_table}}   
+        <button type="submit" class=" btn btn-default">Save</button>
     </form>
 
 </body>
 
 </html>
-

@@ -1,4 +1,5 @@
 
+
 """
 Django settings for mysite project.
 
@@ -28,7 +29,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -38,8 +38,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'blog',
+	'custom_user',
+    'blog',
 )
+
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -58,7 +61,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.abspath('mysite/templates'),
+            os.path.join(BASE_DIR, 'templates'),
             
         ],
         'APP_DIRS': True,
@@ -108,3 +111,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+AUTH_USER_MODEL='custom_user.AuthUser'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'pranavkchaudhary@gmail.com'
+EMAIL_HOST_PASSWORD = 'esvsdbjfaagomhja'
+DEFAULT_FROM_EMAIL = 'pranavkchaudhary@gmail.com'
+EMAIL_PORT = 587
+
+
