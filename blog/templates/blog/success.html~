@@ -12,13 +12,8 @@
 <div class="page-header">
 <a href="{% url "blog.views.post_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>	
 <h1><a href="/">Pranav's Default Blog</a></h1>  <div>
-  {{ user }}
-  {% if user.is_anonymous %}
   <a href="{% url 'django.contrib.auth.views.login' %}">login</a>
   <a href="{% url 'blog.views.register' %}">Register Here</a>
-  {% else %}
-  <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>
-  {% endif %}
       </div>
 </div>
 
